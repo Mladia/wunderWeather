@@ -10,11 +10,10 @@ file.close()
 
 
 
-urlTemp="http://api.wunderground.com/api/" + key + "/hourly/q/zmw:00000.61.10267.json"
+urlTemp="http://api.wunderground.com/api/" + key + "/hourly/q/autoip.json"
+#urlTemp="http://api.wunderground.com/api/" + key + "/hourly/q/zmw:00000.61.10267.json"
 
 
-
-fromUrlTemp=""
 fromUrlTemp = urllib.request.urlopen(urlTemp).read();
 values = json.loads(fromUrlTemp)
 
