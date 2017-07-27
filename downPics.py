@@ -22,6 +22,9 @@ fileHourly.close()
 values = json.loads(current_condition)
 
 current=values["current_observation"]
+
+
+print("Downloading weather pictures...")
 #download image
 pic = urllib.request.urlretrieve("http://icons.wxug.com/i/c/k/" + current["icon"] +".gif",  folder + "currentPic.gif")
 
