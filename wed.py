@@ -1,12 +1,12 @@
 #!/bin/env python
 
-import requests, json, urllib.request
+import json, urllib.request
 
 
+folder='~/.cache/wunderWeather/.currentForecast'
 
-
-fileCurrent = open("./.currentForecast/current_condition")
-fileHourly = open("./.currentForecast/hourly_forecast")
+fileCurrent = open(folder + "/current_condition")
+fileHourly = open(folder + "/hourly_forecast")
 
 current_condition = fileCurrent.read()
 hourly_forecast = fileHourly.read();
