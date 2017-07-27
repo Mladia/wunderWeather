@@ -2,6 +2,11 @@
 
 key=$(cat key)
 
+#creates the folder, if it doesn't exist
+if [ ! -d .currentForecast ]
+	then mkdir .currentForecast
+fi
+
 #curl -s "http://api.wunderground.com/api/$key/hourly/q/autoip.json" > .currentForecast/hourly_forecast
 curl -s "http://api.wunderground.com/api/$key/hourly/q/zmw:00000.80.10727.json.json" > .currentForecast/hourly_forecast
 #curl -s "http://api.wunderground.com/api/$key/conditions/q/autoip.json" > .currentForecast/current_condition
