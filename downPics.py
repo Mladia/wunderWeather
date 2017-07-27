@@ -1,7 +1,6 @@
 #!/bin/env python
 
 import json, urllib.request
-
 from os.path import expanduser
 
 
@@ -23,17 +22,10 @@ fileHourly.close()
 values = json.loads(current_condition)
 
 current=values["current_observation"]
-#download the image
-
-#weatherText
-weatherText = current["weather"]
+#download image
+pic = urllib.request.urlretrieve("http://icons.wxug.com/i/c/k/" + current["icon"] +".gif",  folder + "currentPic.gif")
 
 
-#temp
-currTemp = current["temp_c"]
-
-
-print("Now is "+ weatherText + ", " + str(currTemp) + " C" + " precip: "+current["precip_1hr_metric"] );
 
 
 
@@ -42,13 +34,7 @@ values = json.loads(hourly_forecast)
 
 allTemps = values["hourly_forecast"]
 for i in range(0, len(allTemps) ):
-	
-	time = allTemps[i]["FCTTIME"]["pretty"]
-
-	temp = allTemps[i]["temp"]["metric"]
-	condition = allTemps[i]["condition"]
-	pop = allTemps[i]["pop"]
-	print("At time "+ time + " is " + str(temp) + " C" + " with " + condition +", rain: " + str(pop) + "%"  )
+	pic = urllib.request.urlretrieve("http://icons.wxug.com/i/c/k/" + allTemps[i]["icon"] +".gif",  folder + "hour" + allTemps[i]["FCTTIME"]["civil"].replace(" ", "") + ".gif")
 
 
 

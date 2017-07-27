@@ -2,13 +2,13 @@
 
 key=$(cat key)
 
-folder='~/.cache/wunderWeather/.currentForecast'
+folder="$HOME/.cache/wunderWeather/currentForecast"
 
 #creates the folder, if it doesn't exist
 if [ ! -d $folder ]
 	then
 	mkdir -p $folder
-	echo Creating folder .currentForecast to save the information
+	echo Creating folder currentForecast to save the information
 
 fi
 
