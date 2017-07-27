@@ -1,21 +1,43 @@
 #!/bin/env python
 
 import requests, json, urllib.request
-from datetime import datetime
-
-file = open('key', 'r')
-key = file.read().rstrip("\n").rstrip(" ")
-
-file.close()
 
 
 
-urlTemp="http://api.wunderground.com/api/" + key + "/hourly/q/autoip.json"
-#urlTemp="http://api.wunderground.com/api/" + key + "/hourly/q/zmw:00000.61.10267.json"
+
+fileCurrent = open("./.currentForecast/current_condition")
+fileHourly = open("./.currentForecast/hourly_forecast")
+
+current_condition = fileCurrent.read()
+hourly_forecast = fileHourly.read();
+
+fileCurrent.close()
+fileHourly.close()
 
 
-fromUrlTemp = urllib.request.urlopen(urlTemp).read();
-values = json.loads(fromUrlTemp)
+
+#current condition
+values = json.loads(current_condition)
+
+current=values["current_observation"]
+#download the image
+
+#weatherText
+weatherText = current["weather"]
+
+
+#temp
+currTemp = current["temp_c"]
+
+#download image
+pic = urllib.request.urlretrieve("http://icons.wxug.com/i/c/k/" + current["icon"] +".gif",  "./.currentForecast/currentPic.gif")
+
+print("Now is "+ weatherText + ", " + str(currTemp) + " C" + " precip: "+current["precip_1hr_metric"] );
+
+
+
+#Hourly forecast
+values = json.loads(hourly_forecast)
 
 allTemps = values["hourly_forecast"]
 for i in range(0, len(allTemps) ):
@@ -26,6 +48,7 @@ for i in range(0, len(allTemps) ):
 	condition = allTemps[i]["condition"]
 	pop = allTemps[i]["pop"]
 	print("At time "+ time + " is " + str(temp) + " C" + " with " + condition +", rain: " + str(pop) + "%"  )
+	pic = urllib.request.urlretrieve("http://icons.wxug.com/i/c/k/" + allTemps[i]["icon"] +".gif",  "./.currentForecast/hourl" + allTemps[i]["FCTTIME"]["civil"].replace(" ", "") + ".gif")
 
 
 

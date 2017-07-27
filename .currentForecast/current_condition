@@ -1,0 +1,94 @@
+
+{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "conditions": 1
+  }
+	}
+  ,	"current_observation": {
+		"image": {
+		"url":"http://icons.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"Karlsruhe, Germany",
+		"city":"Karlsruhe",
+		"state":"KS",
+		"state_name":"Germany",
+		"country":"DL",
+		"country_iso3166":"DE",
+		"zip":"00000",
+		"magic":"80",
+		"wmo":"10727",
+		"latitude":"49.00999832",
+		"longitude":"8.39999962",
+		"elevation":"114.9"
+		},
+		"observation_location": {
+		"full":"Hirschstraße, Karlsruhe, ",
+		"city":"Hirschstraße, Karlsruhe",
+		"state":"",
+		"country":"DL",
+		"country_iso3166":"DE",
+		"latitude":"49.007660",
+		"longitude":"8.391490",
+		"elevation":"390 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"IKARLSRU207",
+		"observation_time":"Last Updated on July 27, 10:48 AM CEST",
+		"observation_time_rfc822":"Thu, 27 Jul 2017 10:48:48 +0200",
+		"observation_epoch":"1501145328",
+		"local_time_rfc822":"Thu, 27 Jul 2017 10:54:53 +0200",
+		"local_epoch":"1501145693",
+		"local_tz_short":"CEST",
+		"local_tz_long":"Europe/Berlin",
+		"local_tz_offset":"+0200",
+		"weather":"Mostly Cloudy",
+		"temperature_string":"66.6 F (19.2 C)",
+		"temp_f":66.6,
+		"temp_c":19.2,
+		"relative_humidity":"84%",
+		"wind_string":"From the WNW at 1.2 MPH Gusting to 4.3 MPH",
+		"wind_dir":"WNW",
+		"wind_degrees":302,
+		"wind_mph":1.2,
+		"wind_gust_mph":"4.3",
+		"wind_kph":1.9,
+		"wind_gust_kph":"6.9",
+		"pressure_mb":"1014.4",
+		"pressure_in":"29.96",
+		"pressure_trend":"+",
+		"dewpoint_string":"62 F (16 C)",
+		"dewpoint_f":62,
+		"dewpoint_c":16,
+		"heat_index_string":"NA",
+		"heat_index_f":"NA",
+		"heat_index_c":"NA",
+		"windchill_string":"NA",
+		"windchill_f":"NA",
+		"windchill_c":"NA",
+		"feelslike_string":"66.6 F (19.2 C)",
+		"feelslike_f":"66.6",
+		"feelslike_c":"19.2",
+		"visibility_mi":"10",
+		"visibility_km":"16",
+		"solarradiation":"--",
+		"UV":"3","precip_1hr_string":"-999.00 in ( 0 mm)",
+		"precip_1hr_in":"-999.00",
+		"precip_1hr_metric":" 0",
+		"precip_today_string":"0.02 in (1 mm)",
+		"precip_today_in":"0.02",
+		"precip_today_metric":"1",
+		"icon":"mostlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/mostlycloudy.gif",
+		"forecast_url":"http://www.wunderground.com/global/stations/10727.html",
+		"history_url":"http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=IKARLSRU207",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=49.007660,8.391490",
+		"nowcast":""
+	}
+}
