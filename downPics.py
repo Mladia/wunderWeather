@@ -36,8 +36,8 @@ pic = urllib.request.urlretrieve("http://icons.wxug.com/i/c/k/" + current["icon"
 values = json.loads(hourly_forecast)
 
 allTemps = values["hourly_forecast"]
-for i in range(0, len(allTemps) ):
-	pic = urllib.request.urlretrieve("http://icons.wxug.com/i/c/k/" + allTemps[i]["icon"] +".gif",  folder + "hour" + allTemps[i]["FCTTIME"]["civil"].replace(" ", "") + ".gif")
+for i in range(0, 14 ):
+	pic = urllib.request.urlretrieve("http://icons.wxug.com/i/c/k/" + allTemps[i]["icon"] +".gif",  folder + "hour" + str(i) + ".gif")
 
 
 
