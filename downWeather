@@ -1,8 +1,9 @@
 #!/bin/bash
 
-key=$(cat "$1key")
+key=$(cat $HOME/Documents/git_projects/wunderWeather/key)
+folder=$(cat $HOME/Documents/git_projects/wunderWeather/folder)
 
-folder="$HOME/.cache/wunderWeather/currentForecast"
+echo $folder
 
 #creates the folder, if it doesn't exist
 if [ ! -d $folder ]

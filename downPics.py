@@ -5,7 +5,11 @@ from os.path import expanduser
 
 
 home = expanduser("~")
-folder= home+"/.cache/wunderWeather/currentForecast/"
+
+folderForFolder=open(home+"/Documents/git_projects/wunderWeather/folder");
+folder = folderForFolder.read().rstrip("\n");
+folderForFolder.close()
+
 
 fileCurrent = open(folder + "current_condition")
 fileHourly = open(folder + "hourly_forecast")
