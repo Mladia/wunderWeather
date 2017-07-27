@@ -33,7 +33,7 @@ weatherText = current["weather"]
 currTemp = current["temp_c"]
 
 
-print("Now is "+ weatherText + ", " + str(currTemp) + " C" + " precip: "+current["precip_1hr_metric"] );
+print("Now is " + str(currTemp) + " C, " + weatherText + ", " +  " precip: "+current["precip_1hr_metric"] );
 
 
 
@@ -41,14 +41,14 @@ print("Now is "+ weatherText + ", " + str(currTemp) + " C" + " precip: "+current
 values = json.loads(hourly_forecast)
 
 allTemps = values["hourly_forecast"]
-for i in range(0, len(allTemps) ):
+for i in range(0, int(len(allTemps)/1.6) ):
 	
-	time = allTemps[i]["FCTTIME"]["pretty"]
+	time = allTemps[i]["FCTTIME"]["hour_padded"] + ":" + allTemps[i]["FCTTIME"]["min"] + "-" + allTemps[i]["FCTTIME"]["mday_padded"] +"-"+ allTemps[i]["FCTTIME"]["mon_abbrev"]
 
 	temp = allTemps[i]["temp"]["metric"]
 	condition = allTemps[i]["condition"]
 	pop = allTemps[i]["pop"]
-	print("At time "+ time + " is " + str(temp) + " C" + " with " + condition +", rain: " + str(pop) + "%"  )
+	print(time + " is " + str(temp) + " C" + ", " + condition +", rain: " + str(pop) + "%"  )
 
 
 
