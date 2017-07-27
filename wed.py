@@ -1,8 +1,11 @@
 #!/bin/env python
 
-import json, urllib.request
-
+import json, urllib.request, sys
 from os.path import expanduser
+
+
+parameter = int(sys.argv[1])
+
 
 
 home = expanduser("~")
@@ -32,15 +35,19 @@ weatherText = current["weather"]
 #temp
 currTemp = current["temp_c"]
 
+if parameter==0:
+	print("Now is " + str(currTemp) + " C, " + weatherText + ", " +  " precip: "+current["precip_1hr_metric"] );
+	sys.exit()
 
-print("Now is " + str(currTemp) + " C, " + weatherText + ", " +  " precip: "+current["precip_1hr_metric"] );
-
+	
 
 
 #Hourly forecast
 values = json.loads(hourly_forecast)
 
 allTemps = values["hourly_forecast"]
+
+
 
 #temp[hour][weatherText][pop]
 temps =  []
@@ -60,3 +67,4 @@ for i in range(0, 14):
 
 
 print(temps[5])
+#https://stackoverflow.com/questions/13246597/how-to-read-a-file-line-by-line-in-php
