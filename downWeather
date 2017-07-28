@@ -19,4 +19,4 @@ curl -s "http://api.wunderground.com/api/$key/hourly/q/zmw:00000.80.10727.json.j
 #curl -s "http://api.wunderground.com/api/$key/conditions/q/autoip.json" > .currentForecast/current_condition
 curl -s "http://api.wunderground.com/api/$key/conditions/q/zmw:00000.80.10727.json" > $folder/current_condition
 
-python3 $1"downPics.py"
+python3 $HOME/Documents/git_projects/wunderWeather/downPics.py

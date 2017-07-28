@@ -41,6 +41,7 @@ values = json.loads(hourly_forecast)
 
 allTemps = values["hourly_forecast"]
 for i in range(0, 14 ):
+	print("http://icons.wxug.com/i/c/k/" + allTemps[i]["icon"] +".gif",  folder + "hour" + str(i) + ".gif");
 	pic = urllib.request.urlretrieve("http://icons.wxug.com/i/c/k/" + allTemps[i]["icon"] +".gif",  folder + "hour" + str(i) + ".gif")
 
 
