@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/bin/env python3
 
 import json, urllib.request
 from os.path import expanduser
