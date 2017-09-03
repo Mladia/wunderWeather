@@ -21,4 +21,25 @@ curl -s "http://api.wunderground.com/api/$key/conditions/q/zmw:00000.80.10727.js
 
 curl -s "http://api.wunderground.com/api/$key/forecast/q/zmw:00000.80.10727.json" > $folder/forecast
 
+
+
+
+
+
+echo Getting pictures..
+
 python3 $HOME/Documents/git_projects/wunderWeather/downPics.py
+
+
+
+
+
+echo Sunrise and sunset ..
+mycity="Karlsruhe"
+
+qu="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22nome%2C%20$mycity%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
+
+#echo $qu
+
+riseSet=$(curl -s "$qu" | jq -r '.query.results[].astronomy')
+echo $riseSet > $folder/riseSet
