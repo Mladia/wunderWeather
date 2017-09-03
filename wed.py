@@ -11,9 +11,17 @@ except IndexError:
 	sys.exit()
 
 
+
+
 #TODO: read folder from the file 'folder' 
 home = expanduser("~")
 folder= home+"/.cache/wunderWeather/"
+
+folderName = open(expanduser("~") + "/Documents/git_projects/wunderWeather/folder")
+folder = folderName.read()
+folder = folder[:-2]
+folder = folder + "/"
+
 
 fileCurrent = open(folder + "current_condition")
 fileForecast = open(folder + "forecast")

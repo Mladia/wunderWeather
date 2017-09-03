@@ -21,4 +21,10 @@ curl -s "http://api.wunderground.com/api/$key/conditions/q/zmw:00000.80.10727.js
 
 curl -s "http://api.wunderground.com/api/$key/forecast/q/zmw:00000.80.10727.json" > $folder/forecast
 
+
+
+if [[ $1 == "noPics" ]]; then
+	exit
+fi
+
 python3 $HOME/Documents/git_projects/wunderWeather/downPics.py
