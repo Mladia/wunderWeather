@@ -12,11 +12,6 @@ except IndexError:
 
 
 
-
-#TODO: read folder from the file 'folder' 
-home = expanduser("~")
-folder= home+"/.cache/wunderWeather/"
-
 folderName = open(expanduser("~") + "/Documents/git_projects/wunderWeather/folder")
 folder = folderName.read()
 folder = folder[:-2]
