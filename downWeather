@@ -27,7 +27,7 @@ if [[ $1 == "noPics" ]]; then
 	exit
 fi
 
-echo Getting pictures..
+
 
 python3 $HOME/Documents/git_projects/wunderWeather/downPics.py
 
