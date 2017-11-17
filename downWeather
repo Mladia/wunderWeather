@@ -23,17 +23,6 @@ curl -s "http://api.wunderground.com/api/$key/forecast/q/zmw:00000.80.10727.json
 
 
 
-if [[ $1 == "noPics" ]]; then
-	exit
-fi
-
-
-
-python3 $HOME/Documents/git_projects/wunderWeather/downPics.py
-
-
-
-
 
 
 echo Sunrise and sunset ..
@@ -45,3 +34,26 @@ qu="https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.fore
 
 riseSet=$(curl -s "$qu" | jq -r '.query.results[].astronomy')
 echo $riseSet > $folder/riseSet
+
+
+#echo $qu
+
+riseSet=$(curl -s "$qu" | jq -r '.query.results[].astronomy')
+echo $riseSet > $folder/riseSet
+
+
+
+
+
+
+if [[ $1 == "noPics" ]]; then
+	exit
+fi
+
+
+
+python3 $HOME/Documents/git_projects/wunderWeather/downPics.py
+
+
+
+
