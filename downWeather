@@ -14,10 +14,10 @@ if [ ! -d $folder ]
 fi
 
 echo Getting weather information and writing it to the folder...
-#curl -s "http://api.wunderground.com/api/$key/hourly/q/autoip.json" > .currentForecast/hourly_forecast
-curl -s "http://api.wunderground.com/api/$key/hourly/q/zmw:00000.80.10727.json.json" > $folder/hourly_forecast
-#curl -s "http://api.wunderground.com/api/$key/conditions/q/autoip.json" > .currentForecast/current_condition
-curl -s "http://api.wunderground.com/api/$key/conditions/q/zmw:00000.80.10727.json" > $folder/current_condition
+curl -s "http://api.wunderground.com/api/$key/hourly/q/autoip.json" > $folder/hourly_forecast
+#curl -s "http://api.wunderground.com/api/$key/hourly/q/zmw:00000.80.10727.json.json" > $folder/hourly_forecast
+curl -s "http://api.wunderground.com/api/$key/conditions/q/autoip.json" > $folder/current_condition
+#curl -s "http://api.wunderground.com/api/$key/conditions/q/zmw:00000.80.10727.json" > $folder/current_condition
 
 curl -s "http://api.wunderground.com/api/$key/forecast/q/zmw:00000.80.10727.json" > $folder/forecast
 
